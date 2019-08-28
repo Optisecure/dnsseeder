@@ -1,4 +1,4 @@
-module github.com/gcash/dnsseeder
+module github.com/akshaynexus/dnsseeder
 
 go 1.12
 
