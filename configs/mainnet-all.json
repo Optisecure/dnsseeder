@@ -3,7 +3,7 @@
   "Desc": "Lytix Mainnet - All",
   "Id": "0xb4c32a5f",
   "Port": 27071,
-  "Pver": 70214,
+  "Pver": 71032,
   "DNSName": "dns1.lytixchain.org",
   "TTL": 3600,
   "Seeder1": "dns2.lytixchain.org",
