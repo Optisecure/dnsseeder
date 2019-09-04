@@ -48,12 +48,12 @@ func crawlIP(s *dnsseeder, r *result) ([]*wire.NetAddress, *crawlError) {
 	peerCfg := &peer.Config{
 		UserAgentName:    "lytixchain-dnsseeder-go", // User agent name to advertise.
 		UserAgentVersion: "2.3.1.1",                 // User agent version to advertise.
-		ChainParams:      &chaincfg.MainNetParams{
+		ChainParams:      &chaincfg.Params{
 			Name: s.name,
 			Net:s.id,
 		},
 		Services:         0,
-		ProtocolVersion:  s.Pver,//
+		ProtocolVersion:  s.pver,//
 		Listeners: peer.MessageListeners{
 			OnAddr: func(p *peer.Peer, msg *wire.MsgAddr) {
 				onAddr <- msg

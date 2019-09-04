@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/akshaynexus/quand/wire"
+	"github.com/gcash/bchd/wire"
 	"github.com/miekg/dns"
 	"time"
 )

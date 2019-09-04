@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/akshaynexus/quand/wire"
+	"github.com/gcash/bchd/wire"
 )
 
 // Node struct contains details on one client
