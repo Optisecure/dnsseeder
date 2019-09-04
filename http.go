@@ -509,7 +509,7 @@ func writeHeader(w http.ResponseWriter, r *http.Request) {
 	// we are using basic and simple html here. No fancy graphics or css
 	h1 := `
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<html><head><title>Quantis Go Seeder</title><link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+	<html><head><title>Lytix SeederX</title><link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 	<style>
 	body {
 		background-color: #1e1e1e;
@@ -525,8 +525,8 @@ func writeHeader(w http.ResponseWriter, r *http.Request) {
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #388E3C;">
-  <a class="navbar-brand" href="#">Quantis SeederX</a>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #56ccf2, #2f80ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+  <a class="navbar-brand" href="#">Lytix SeederX</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
