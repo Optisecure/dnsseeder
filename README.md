@@ -5,9 +5,7 @@ dnsseeder
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/gcash/dnsseeder)
 
-A Quantis network crawler and DNS seeder written in Go.
-
-Preview at http://quanseed.com/summary
+A Lytix network crawler and DNS seeder written in Go.
 
 Originally forked from https://github.com/gombadi/dnsseederd
 
