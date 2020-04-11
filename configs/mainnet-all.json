@@ -1,11 +1,11 @@
 {
   "Name": "Mainnet All",
-  "Desc": "Lytix Mainnet - All",
-  "Id": "0xb4c32a5f",
-  "Port": 27071,
-  "Pver": 71032,
-  "DNSName": "dns1.lytixchain.org",
+  "Desc": "IndexChain Mainnet - All",
+  "Id": "0xe5d3f74d",
+  "Port": 7082,
+  "Pver": 90037,
+  "DNSName": "idxseeder.mineit.io",
   "TTL": 3600,
-  "Seeder1": "dns2.lytixchain.org",
-  "Seeder2": "dns3.lytixchain.org"
+  "Seeder1": "202.182.107.84",
+  "Seeder2": "mineit.io"
 }
