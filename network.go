@@ -19,6 +19,7 @@ type JNetwork struct {
 	Port            uint16
 	Pver            uint32
 	DNSName         string
+	UserAgent		string
 	NameServer      string
 	Mbox            string
 	TTL             uint32
@@ -40,6 +41,7 @@ func createNetFile() {
 		Pver:       70001,
 		TTL:        600,
 		DNSName:    "seeder.example.com",
+		UserAgent:  "/Satoshi:0.5.2/",
 		NameServer: "nameserver.example.com",
 		Name:       "SeederNet",
 		Mbox:       "admin.example.com", // @ symbol replaced with period
@@ -103,6 +105,7 @@ func initNetwork(jnw JNetwork) (*dnsseeder, error) {
 	seeder.name = jnw.Name
 	seeder.desc = jnw.Desc
 	seeder.dnsHost = jnw.DNSName
+	seeder.UserAgent = jnw.UserAgent
 	seeder.nameServer = jnw.NameServer
 	seeder.mbox = jnw.Mbox
 
@@ -117,10 +120,10 @@ func initNetwork(jnw JNetwork) (*dnsseeder, error) {
 
 	// load the seeder dns
 	//Use only 2 as we dont have a 3rd seeder yet
-	seeder.seeders = make([]string, 2)
+	seeder.seeders = make([]string, 3)
 	seeder.seeders[0] = jnw.Seeder1
 	seeder.seeders[1] = jnw.Seeder2
-	// seeder.seeders[2] = jnw.Seeder3
+	seeder.seeders[2] = jnw.Seeder3
 
 	// Parse service flags
 	var services []wire.ServiceFlag

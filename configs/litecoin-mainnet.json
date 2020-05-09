@@ -1,0 +1,13 @@
+{
+    "Name": "Litecoin Mainnet",
+    "Desc": "Litecoin Mainnet",
+    "Id": "0xdbb6c0fb",
+    "Port": 9333,
+    "Pver": 70015,
+    "DNSName": "litecoinseeder.mineit.io",
+    "TTL": 3600,
+    "UserAgent":"LiteToshi",
+    "Seeder1": "95.216.68.131",
+    "Seeder2": "195.201.111.113",
+    "Seeder3":"77.120.113.181"
+  }

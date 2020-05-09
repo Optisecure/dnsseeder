@@ -1,0 +1,13 @@
+{
+  "Name": "5gCash Mainnet",
+  "Desc": "5gCash Mainnet",
+  "Id": "0x4fe44dc4",
+  "Port": 55555,
+  "Pver": 70212,
+  "DNSName": "5gseeder.mineit.io",
+  "TTL": 3600,
+  "UserAgent":"5G",
+  "Seeder1": "mineit.io",
+  "Seeder2": "144.91.113.32",
+  "Seeder3":"62.171.190.193"
+}

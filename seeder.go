@@ -58,6 +58,7 @@ type dnsseeder struct {
 	mtx             sync.RWMutex       // protect thelist
 	dnsHost         string             // dns host we will serve results for this domain
 	nameServer      string             // the hostname of the nameserver
+	UserAgent       string 			   // the useragent the seeder will broadcast
 	mbox            string             // E-Mail address reported in SOA records
 	name            string             // Short name for the network
 	desc            string             // Long description for the network

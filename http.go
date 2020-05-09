@@ -506,10 +506,21 @@ func summaryHandler(w http.ResponseWriter, r *http.Request) {
 
 // writeHeader will output the standard header
 func writeHeader(w http.ResponseWriter, r *http.Request) {
+		// read the seeder name
+		n := r.FormValue("s")
+		seedername := ""
+		printseeder := false
+		if n != "" {
+			s := getSeederByName(n)
+			if s != nil{
+				printseeder = true
+				seedername = s.name
+			}
+		}
 	// we are using basic and simple html here. No fancy graphics or css
 	h1 := `
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<html><head><title>Lytix SeederX</title><link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+	<html><head><title>DNSSeeder</title><link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 	<style>
 	body {
 		background-color: #1e1e1e;
@@ -526,31 +537,25 @@ func writeHeader(w http.ResponseWriter, r *http.Request) {
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #56ccf2, #2f80ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-  <a class="navbar-brand" href="#">Lytix SeederX</a>
+  <a class="navbar-brand" href="#">DNSSeeder</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="/summary">Summary <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/dns?s=Mainnet All">DNS</a>
+        <a class="nav-link" href="/dns?s=` + n +`">DNS</a>
 	  </li>
 	  <li class="nav-item">
-	  <a class="nav-link" href="/statusCG?s=Mainnet All">CGNodes</a>
+	  <a class="nav-link" href="/statusCG?s=` + n + `">CGNodes</a>
 	</li>
     </ul>
   </div>
 </nav> 
 `
 	fmt.Fprintf(w, h1)
-
-	// read the seeder name
-	n := r.FormValue("s")
-	if n != "" {
-		s := getSeederByName(n)
-		if s != nil {
-			fmt.Fprintf(w, "<br><b>Seeder: %s</b>", html.EscapeString(s.name))
-		}
+	if printseeder{
+		fmt.Fprintf(w, "<br><b>Seeder: %s</b>", html.EscapeString(seedername))
 	}
 	fmt.Fprintf(w, "</center><hr><br>")
 }

@@ -46,7 +46,7 @@ func crawlIP(s *dnsseeder, r *result) ([]*wire.NetAddress, *crawlError) {
 	verack := make(chan struct{})
 	onAddr := make(chan *wire.MsgAddr)
 	peerCfg := &peer.Config{
-		UserAgentName:    "lytixchain-dnsseeder-go", // User agent name to advertise.
+		UserAgentName:    s.UserAgent, // User agent name to advertise.
 		UserAgentVersion: "2.3.1.1",                 // User agent version to advertise.
 		ChainParams: &chaincfg.Params{
 			Name: s.name,
@@ -74,12 +74,7 @@ func crawlIP(s *dnsseeder, r *result) ([]*wire.NetAddress, *crawlError) {
 			},
 		},
 	}
-	// Assume testnet 3 if we are using a testnet port!
-	if s.port == 18333 {
-		peerCfg.ChainParams = &chaincfg.TestNet3Params
-	} else {
-		peerCfg.ChainParams = &chaincfg.MainNetParams
-	}
+
 	p, err := peer.NewOutboundPeer(peerCfg, r.node)
 	if err != nil {
 		return nil, &crawlError{"NewOutboundPeer: error", err}
