@@ -8,6 +8,6 @@
     "TTL": 3600,
     "UserAgent":"LiteToshi",
     "Seeder1": "95.216.68.131",
-    "Seeder2": "195.201.111.113",
+    "Seeder2": "dnsseed.thrasher.io",
     "Seeder3":"77.120.113.181"
   }
